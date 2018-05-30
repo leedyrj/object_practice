@@ -49,18 +49,17 @@ console.log(url.donations)
 //4.
 // Calendar of events
 const calendar = {
-    events: [
-        {eventOne: "5/31"},
-        {eventTwo: "6/1"},
-        {eventThree: "6/2"},
-        {eventFour: "6/3"}
-    ]
+    kissBabies: '5/31',
+    shakeHands: '6/1',
+    giveSpeech: '6/2',
+    waveInParade: '6/3'
 }
 
-function changeEventDate(calToChange, eventToChange, newDate) {
-
+function reschedule(eventToChange, newDate) {
+    calendar[eventToChange] = newDate
 }
-
+reschedule('kissBabies', '6/4')
+console.log(calendar)
 
 //5.
 // Volunteer information
@@ -72,8 +71,26 @@ function changeEventDate(calToChange, eventToChange, newDate) {
 // What activities each one is willing to do (e.g. answering phone calls, taking polls, etc.)
 const volInfo = {
     name: ['Mary', 'Joe', 'Sally', 'Heather'],
-    address: ['1 Main St', '2 Broadway', '5 ']
+    address: ['1 Main St', '2 Broadway', '5 Front St', '10 E West Rd'],
+    email: ['mary@email.com', 'joe@email.com', 'sally@email.com', 'heather@email.com'],
+    phoneNumber: ['555-555-5555', '555-444-4444', '555-123-4567', '555-123-1234'],
+    availability: ['weekends', 'weekday evenings', 'open', 'weekday mornings'],
+    activities: ['door-knocking', 'phone calls', 'phone calls, take polls', 'drive people to polls, make calls']
 }
+
+console.log(volInfo.name.length)
+
+for (let i=0; i<volInfo.name.length; i++){
+
+}
+
+
+// function addName(infoName, newName) {
+//     newName = volInfo.name.push(newName)
+// }
+// addName('name', 'Harry')
+// console.log(volInfo.name)
+
 //6.
 // Biography
 const bio = {
@@ -154,11 +171,12 @@ document.body.onload = addElement;
 function addElement () { 
   // create a new div element 
   var newArt = document.createElement("article");
-  newArt.setAttribute('id', '5')
+  newArt.setAttribute('id', 'district-11')
   // and give it some content
   let platformInfo = '';
 for (let x in platform) {
-      platformInfo = platformInfo + " " +  platform[x]
+      platformInfo += ` ,${platform[x]}`;
+      console.log(platformInfo);
     }
   var newContent = document.createTextNode(platformInfo); 
   // add the text node to the newly created div
