@@ -78,18 +78,16 @@ const volInfo = {
     activities: ['door-knocking', 'phone calls', 'phone calls, take polls', 'drive people to polls, make calls']
 }
 
-console.log(volInfo.name.length)
-
-for (let i=0; i<volInfo.name.length; i++){
-
+function addVol(newName, newAddress, newEmail, newNumber, newAvail, newActiv) {
+    newName = volInfo.name.push(newName);
+    newAddress = volInfo.address.push(newAddress);
+    newEmail = volInfo.email.push(newEmail);
+    newNumber = volInfo.phoneNumber.push(newNumber);
+    newAvail = volInfo.availability.push(newAvail);
+    newActiv = volInfo.activities.push(newActiv);
 }
-
-
-// function addName(infoName, newName) {
-//     newName = volInfo.name.push(newName)
-// }
-// addName('name', 'Harry')
-// console.log(volInfo.name)
+addVol('Harry', '65 First Ave', 'harry@email.com', '555-765-4321', 'weekend mornings', 'call')
+console.log(volInfo.activities)
 
 //6.
 // Biography
